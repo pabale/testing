@@ -9,6 +9,9 @@ node {
     }
     stage("phpunit") {
         // Run PHPUnit
+        sh 'php artisan key:generate'
+        sh 'php artisan config:cache'
+
         sh 'vendor/bin/phpunit'
     }
 }
