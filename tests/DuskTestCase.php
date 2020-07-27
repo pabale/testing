@@ -19,15 +19,16 @@ abstract class DuskTestCase extends BaseTestCase
      */
     public static function prepare()
     {
-        static::startChromeDriver();
+        //static::startChromeDriver();
     }
+    
 
     /**
      * Create the RemoteWebDriver instance.
      *
      * @return \Facebook\WebDriver\Remote\RemoteWebDriver
      */
-    protected function driver()
+    /*protected function driver()
     {
         $options = (new ChromeOptions)->addArguments([
             '--disable-gpu',
@@ -39,6 +40,13 @@ abstract class DuskTestCase extends BaseTestCase
             'http://localhost:9515', DesiredCapabilities::chrome()->setCapability(
                 ChromeOptions::CAPABILITY, $options
             )
+        );
+    }*/
+    
+    protected function driver()
+    {
+        return RemoteWebDriver::create(
+            'http://localhost:4444', DesiredCapabilities::phantomjs()
         );
     }
 }
