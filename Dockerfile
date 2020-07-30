@@ -1,1 +1,2 @@
 
+COPY package.json .
