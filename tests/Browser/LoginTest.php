@@ -17,7 +17,7 @@ class LoginTest extends DuskTestCase
     public function testExample()
     {
         $this->browse(function (Browser $browser) {
-            $browser->visit('http://127.0.0.1:8001')
+            $browser->visit('http://127.0.0.1:8000')
                     ->assertSee('Laravel');
         });
     }
